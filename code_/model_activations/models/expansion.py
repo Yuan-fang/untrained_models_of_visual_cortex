@@ -9,6 +9,7 @@ from code_.model_activations.models.layer_operations.nonlinearity import NonLine
 torch.manual_seed(42)
 torch.cuda.manual_seed(42)
 
+# yzhao: this step builds the architecture class of the customed CNN network
 class Model(nn.Module):
     """Expansion model architecture consisting of 5 convolutional and pooling layers."""
     def __init__(self, conv1: nn.Module, pool1: nn.Module, conv2: nn.Module, pool2: nn.Module, 
@@ -43,6 +44,7 @@ class Model(nn.Module):
         x = self.last(x)
         return x
 
+# yzhao: this is the specific class to define the conv filters in each layer and return a untrained custom network
 class Expansion5L:
     """Constructing the 5-layer expansion model with customizable filter sizes and types."""
     def __init__(self, filters_1: Optional[int] = None, filters_2: int = 1000, filters_3: int = 3000, 
