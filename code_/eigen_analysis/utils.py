@@ -12,7 +12,7 @@ from sklearn.decomposition import PCA, IncrementalPCA
 from sklearn.preprocessing import StandardScaler
 from config import CACHE
 
-
+# yzhao: deciding num of pcs as 99% accummualated variance explained
 def num_pcs_required(variance_ratio, explained_variance=0.99):    
     # Calculate cumulative variance explained
     cumulative_variance = np.cumsum(variance_ratio)
