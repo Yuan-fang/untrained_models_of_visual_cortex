@@ -7,6 +7,7 @@ import gc
 # env paths
 from config import CACHE
 
+# yzhao: this function specifi the number of pcs and make it a callback when forward-pass the image
 def register_pca_hook(x: torch.Tensor, pca_file_name: str, n_components, 
                       device) -> torch.Tensor:
     """
